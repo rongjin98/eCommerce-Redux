@@ -1,0 +1,17 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "Full Stack Web Development of E-Commerce",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "keywords": [
+    "MERN"
+  ],
+  "author": "Rong Jin",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
