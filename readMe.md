@@ -3,12 +3,15 @@
 1. Node.js
 2. Express.js
 3. React.js
-4. Git
-5. Postman - backend-test
-6. MongoDB
-7. Bootstrap
-8. React-bootstrap
-9. axios
+   * React Router Dom
+   * React Bootstrap
+   * React Router Bootstrap
+4. Postman - backend-test
+5. MongoDB
+6. Bootstrap
+7. axios
+8. dotEnv
+9. Mongoose
 
 
 

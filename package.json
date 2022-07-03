@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Full Stack Web Development of E-Commerce",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node backend/server"
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix pro_shop",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [
     "MERN"
@@ -12,6 +16,11 @@
   "author": "Rong Jin",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.1"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
   }
 }
