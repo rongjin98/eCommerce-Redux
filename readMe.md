@@ -2,16 +2,20 @@
 
 1. Node.js
 2. Express.js
+   * express-async-handler
 3. React.js
    * React Router Dom
    * React Bootstrap
    * React Router Bootstrap
-4. Postman - backend-test
-5. MongoDB
-6. Bootstrap
-7. axios
-8. dotEnv
-9. Mongoose
+4. MongoDB
+5. Bootstrap
+6. axios
+7. dotEnv
+8. Mongoose
+9. Redux:
+   * react-redux
+   * redux-thunk(for async request, basically a piece of middleware)
+   * redux-devtools-extension(simplify redux setting up)
 
 
 
