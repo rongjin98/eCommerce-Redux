@@ -10,7 +10,8 @@
     "client": "npm start --prefix pro_shop",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d"
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix pro_shop && npm run build --prefix pro_shop"
   },
   "keywords": [
     "MERN"
@@ -22,7 +23,8 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-async-handler": "^1.2.0",
-    "mongoose": "^6.4.2"
+    "mongoose": "^6.4.2",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "concurrently": "^7.2.2"
