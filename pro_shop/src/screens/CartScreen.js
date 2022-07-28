@@ -9,20 +9,20 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom'
 
 
 const CartScreen = () => {
-    let {id} = useParams()
+    // let {id} = useParams()
     let navigate = useNavigate()
-    const qty_resp = useLocation().search
-    const qty = qty_resp ? Number(qty_resp.split('=')[1]) : 1
+    // const qty_resp = useLocation().search
+    // const qty = qty_resp ? Number(qty_resp.split('=')[1]) : 1
 
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cart)
     const { cartItems } = cart
 
-    useEffect(() => {
-        if(id) {
-            dispatch(addToCart(id, qty))
-        }
-    }, [dispatch, id, qty])
+    // useEffect(() => {
+    //     if(id) {
+    //         dispatch(addToCart(id, qty, "update"))
+    //     }
+    // }, [dispatch, id, qty, "update"])
 
     const removeFromCartHandler = (id) => {
         dispatch(RemoveFromCart(id))
@@ -59,11 +59,10 @@ const CartScreen = () => {
                       value={item.qty}
                       onChange={(e) =>
                         dispatch(
-                          addToCart(item.product, Number(e.target.value))
+                          addToCart(item.product, Number(e.target.value), "Update")
                         )
-                      }
-                    >
-                      {[...Array(item.countInStock).keys()].map((x) => (
+                      }>
+                      {[...Array(item.qty + 2).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>

@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { listProductDetails } from '../actions/productActions'
+import { addToCart } from '../actions/cartActions'
 import { Link, useParams, useNavigate } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Card, Button, ListGroupItem, Form } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Card, Button, ListGroupItem, Form, Alert } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -13,19 +14,27 @@ const ProductScreen = () => {
     const productDetails = useSelector(state => state.productDetails)
     const {loading, error, product} = productDetails
 
+    const [showAlert, setShowAlert] = useState(false)
+
     let {id} = useParams()
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
 
     useEffect(() => {
         dispatch(listProductDetails(id))}, [dispatch, id])
     
+    
+    
+    
     const addToCartHandler = () => {
-        navigate(`/cart/${id}?qty=${qty}`)
+        // navigate(`/cart/${id}?qty=${qty}`)
+        dispatch(addToCart(id, qty, "ADD"))
+        setShowAlert(true)
     }
 
 
   return (
     <>
+        <Alert variant='success' show={showAlert} dismissible onClose={() => setShowAlert(false)}>Added to cart</Alert>
         <Link className='btn btn-dark my-3' to="/">
             Go Back
         </Link>
